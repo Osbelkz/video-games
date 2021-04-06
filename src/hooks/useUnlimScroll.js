@@ -26,7 +26,7 @@ export function useUnlimScroll (action, condition){
                 observer.unobserve(ref.current)
             }
         }
-    }, [ref, condition]);
+    }, [ref, condition, action]);
 
     return {ref}
 }

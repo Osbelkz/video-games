@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from "react-router-dom";
 import classes from "./GameCard.module.scss"
 import {useHistory} from 'react-router-dom';
 import noImageAvailable from "./no-image-available.png"

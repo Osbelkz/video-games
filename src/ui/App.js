@@ -1,10 +1,8 @@
 import './App.scss';
 import {Switch, Route} from "react-router-dom";
-import {useEffect, useState} from "react";
-import {useDispatch, useSelector} from "react-redux";
-import {getCards, getPlatforms} from "../bll/reducer";
-import Catalog from "./pages/Catalog/Catalog";
-import GameDetails from "./pages/GameDetails/GameDetails";
+import {useEffect} from "react";
+import {useDispatch} from "react-redux";
+import {getPlatforms} from "../bll/reducer";
 import CatalogContainer from "./pages/Catalog/CatalogContainer";
 import GameDetailsContainer from "./pages/GameDetails/GameDetailsContainer";
 
