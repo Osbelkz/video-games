@@ -1,0 +1,46 @@
+.select {
+  position: relative;
+  display: flex;
+  min-width: 15rem;
+  max-width: fit-content;
+  padding: 1rem 1.6rem;
+  border-radius: .8rem;
+  color: white;
+  background-color: #262626;
+  margin-bottom: 1rem;
+  &:hover {
+    cursor: pointer;
+  }
+  .optionsWrapper {
+    border-radius: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: inherit;
+    max-width: inherit;
+    background-color: #fff;
+    padding: .5rem 1rem;
+    max-height: 20rem;
+    overflow-y: auto;
+    .options {
+      list-style: none;
+      color: black;
+      .option {
+        padding: 0 1rem;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 1.6rem;
+        &:hover {
+          background-color: darkgrey;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 450px){
+  .select {
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,22 @@
+.header {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  .settings {
+    margin-top: 1.5rem;
+    justify-content: space-between;
+  }
+}
+
+.noResults {
+  color: #ffffff;
+  text-align: center;
+}
+
+@media screen and (min-width: 45rem) {
+  .header {
+    .settings {
+      display: flex;
+    }
+  }
+}

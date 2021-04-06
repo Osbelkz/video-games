@@ -1,0 +1,18 @@
+.search {
+  width: 100%;
+  transition: color .3s,background-color .3s,opacity .3s,width .05s linear;
+  height: 4.5rem;
+  border-radius: 2.4rem;
+  font-size: 1.6rem;
+  line-height: normal;
+  font-weight: 400;
+  padding: 0 1.2rem 0 3.8rem;
+  color: hsla(0,0%,100%,.6);
+  background-color: hsla(0,0%,100%,.16);
+  border: none;
+  outline: none;
+  &:focus {
+    background-color: white;
+    color: black;
+  }
+}
