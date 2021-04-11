@@ -1,7 +1,6 @@
 
 .carousel {
   margin-top: 1.5rem;
-
   h2 {
     margin-bottom: 1.5rem;
     text-align: center;
@@ -10,10 +9,11 @@
 }
 
 .eachSlide > div {
+  padding-top: 56.25%;
+  min-width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 20rem;
   background-size: cover;
 }
 
@@ -22,28 +22,4 @@
   padding: 2rem;
   text-align: center;
   background: #efefef;
-}
-
-@media screen and (min-width: 40rem) {
-  .eachSlide > div {
-    height: 25rem;
-  }
-}
-
-@media screen and (min-width: 50rem) {
-  .eachSlide > div {
-    height: 30rem;
-  }
-}
-
-@media screen and (min-width: 70rem) {
-  .eachSlide > div {
-    height: 40rem;
-  }
-}
-
-@media screen and (min-width: 90rem) {
-  .eachSlide > div {
-    height: 60rem;
-  }
 }
