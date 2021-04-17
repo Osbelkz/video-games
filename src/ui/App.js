@@ -1,6 +1,6 @@
 import './App.scss';
 import {Switch, Route} from "react-router-dom";
-import {useEffect} from "react";
+import React, {useEffect} from "react";
 import {useDispatch} from "react-redux";
 import {getPlatforms} from "../bll/reducer";
 import CatalogContainer from "./pages/Catalog/CatalogContainer";

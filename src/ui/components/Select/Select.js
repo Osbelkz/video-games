@@ -10,6 +10,7 @@ const Select = React.memo(({options, title, onChange}) => {
         setIsComponentVisible(value => !value);
     };
     const selectOption = (e) => {
+        console.log(e)
         setSelectedOption(e.target.innerHTML);
         onChange(e.currentTarget.dataset.option);
     };

@@ -22,6 +22,7 @@ const CatalogContainer = () => {
     const orderCards = useCallback((value) => {
         dispatch(setOrdering(value));
     }, []);
+
     const filterPlatforms = useCallback((value) => {
         dispatch(setFilterPlatform(value));
     }, []);
