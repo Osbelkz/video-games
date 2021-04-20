@@ -37,7 +37,7 @@ export const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 ...action.payload,
-            }
+            };
         }
         case SET_SEARCH:
         case SET_FILTER:
@@ -48,10 +48,10 @@ export const reducer = (state = initialState, action) => {
                 cards: [],
                 lastPage: 0,
                 isMorePages: true,
-            }
+            };
         }
         default:
-            return state
+            return state;
     }
 };
 
@@ -61,7 +61,7 @@ export const reducer = (state = initialState, action) => {
 const setCards = (cards, page, isMorePages) => (({type: SET_CARDS, payload: {cards, page, isMorePages}}));
 const setGameDetails = (gameDetails) => ({type: SET_GAME_DETAILS, payload: {gameDetails}});
 const setGameScreenshots = (screenshots) => ({type: SET_SCREENSHOTS, payload: {screenshots}});
-export const setFilterPlatform = (filteredPlatforms) =>  ({type: SET_FILTER, payload: {filteredPlatforms}});
+export const setFilterPlatform = (filteredPlatforms) => ({type: SET_FILTER, payload: {filteredPlatforms}});
 export const setOrdering = (ordering) => ({type: SET_SORT, payload: {ordering}});
 export const setSearchWord = (searchWord) => ({type: SET_SEARCH, payload: {searchWord}});
 export const setPlatforms = (allPlatforms) => ({type: SET_PLATFORMS, payload: {allPlatforms}});
@@ -76,17 +76,17 @@ export const getCards = () => async (dispatch, getState) => {
             await showcaseAPI.getGameCards(lastPage + 1, ordering, searchWord, filteredPlatforms);
         dispatch(setCards(result.data.results, lastPage + 1, !!result.data.next));
     } catch (e) {
-        console.log("getCards thunk", e)
+        console.log("getCards thunk", e);
     }
 };
 
 export const getGameDetails = (slug) => async (dispatch, getState) => {
     let result = await showcaseAPI.getGameDetails(slug);
     try {
-        await dispatch(getGameScreenshots(slug))
+        await dispatch(getGameScreenshots(slug));
         dispatch(setGameDetails(result.data));
     } catch (e) {
-        console.log("getGameDetails thunk", e)
+        console.log("getGameDetails thunk", e);
     }
 };
 
@@ -95,9 +95,8 @@ export const getGameScreenshots = (slug) => async (dispatch, getState) => {
         let result = await showcaseAPI.getGameScreenshots(slug);
         dispatch(setGameScreenshots(result.data.results));
     } catch (e) {
-        console.log("getGameScreenshots thunk", e)
+        console.log("getGameScreenshots thunk", e);
     }
-
 };
 
 export const getPlatforms = () => async (dispatch) => {
@@ -105,6 +104,6 @@ export const getPlatforms = () => async (dispatch) => {
         let result = await showcaseAPI.getPlatforms();
         dispatch(setPlatforms(result.data.results));
     } catch (e) {
-        console.log("getPlatforms thunk", e)
+        console.log("getPlatforms thunk", e);
     }
 };

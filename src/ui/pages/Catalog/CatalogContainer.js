@@ -34,17 +34,17 @@ const CatalogContainer = () => {
     }, [isMorePages]);
 
     const setSearch = useCallback((searchWord) => {
-        dispatch(setSearchWord(searchWord))
+        dispatch(setSearchWord(searchWord));
     }, []);
 
     return <Catalog setSearch={setSearch}
-                 orderCards={orderCards}
-                 allPlatforms={allPlatforms}
-                 isMorePages={isMorePages}
-                 cards={cards}
-                 getMoreCards={getMoreCards}
-                 filterPlatforms={filterPlatforms}/>
-    ;
+                    orderCards={orderCards}
+                    allPlatforms={allPlatforms}
+                    isMorePages={isMorePages}
+                    cards={cards}
+                    getMoreCards={getMoreCards}
+                    filterPlatforms={filterPlatforms}/>
+        ;
 };
 
 export default CatalogContainer;

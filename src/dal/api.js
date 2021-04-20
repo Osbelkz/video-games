@@ -1,12 +1,11 @@
 import axios from "axios";
 
-const API_KEY = process.env.APP_API;
 const API_URL = "https://api.rawg.io/api/";
 
 const instance = axios.create({
     baseURL: API_URL,
     params: {
-        api_key: API_KEY,
+        key: "8b25a694eec8404c8845d2de861b57d8",
     },
 });
 
@@ -18,7 +17,7 @@ export const showcaseAPI = {
                 ordering,
                 search,
                 page,
-            }
+            },
         });
     },
     getGameDetails(slug) {
@@ -30,4 +29,4 @@ export const showcaseAPI = {
     getPlatforms() {
         return instance.get(`/platforms`);
     },
-}
+};

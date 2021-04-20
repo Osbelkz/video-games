@@ -7,7 +7,7 @@ const GameCards = ({cards}) => {
     return (
         <div className={classes.cards}>
             {cards.map((card) => {
-                return <GameCard key={card.id} card={card}/>
+                return <GameCard key={card.id} card={card}/>;
             })}
         </div>
     );

@@ -1,6 +1,6 @@
 import {useEffect, useRef} from "react";
 
-export function useUnlimScroll (action, condition){
+export function useUnlimScroll(action, condition) {
 
     const ref = useRef();
 
@@ -14,8 +14,8 @@ export function useUnlimScroll (action, condition){
             {
                 root: null,
                 rootMargin: "0px",
-                threshold: 0.1
-            }
+                threshold: 0.1,
+            },
         );
         if (ref.current) {
             observer.observe(ref.current);
@@ -23,10 +23,10 @@ export function useUnlimScroll (action, condition){
 
         return () => {
             if (ref.current) {
-                observer.unobserve(ref.current)
+                observer.unobserve(ref.current);
             }
-        }
+        };
     }, [ref, condition, action]);
 
-    return {ref}
+    return {ref};
 }
