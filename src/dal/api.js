@@ -13,10 +13,10 @@ export const showcaseAPI = {
     getGameCards(page, ordering, search, platforms) {
         return instance.get(`games`, {
             params: {
-                platforms,
-                ordering,
-                search,
-                page,
+                platforms: platforms || undefined,
+                ordering: ordering || undefined,
+                search: search || undefined,
+                page: page ?? undefined,
             },
         });
     },

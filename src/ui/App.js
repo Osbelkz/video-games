@@ -1,17 +1,13 @@
 import './App.scss';
 import {Switch, Route} from "react-router-dom";
 import React, {useEffect} from "react";
-import {useDispatch} from "react-redux";
-import {getPlatforms} from "../bll/reducer";
 import CatalogContainer from "./pages/Catalog/CatalogContainer";
 import GameDetailsContainer from "./pages/GameDetails/GameDetailsContainer";
+import { getPlatformsFx } from "../bll/effector";
 
 function App() {
-
-    const dispatch = useDispatch();
-
     useEffect(() => {
-        dispatch(getPlatforms());
+        getPlatformsFx();
     }, []);
 
     return (

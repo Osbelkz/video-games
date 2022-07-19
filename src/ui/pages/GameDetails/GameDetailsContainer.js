@@ -1,31 +1,34 @@
-import React, {useEffect} from 'react';
-import {useDispatch, useSelector} from "react-redux";
+import React from 'react';
 import {useParams} from "react-router-dom";
-import {getGameDetails} from "../../../bll/reducer";
 import Preloader from "../../components/Preloader/Preloader";
 import GameDetails from "./GameDetails";
+import {
+    $gameDetails,
+    $gameScreenshots,
+    GameDetailsGate,
+    getGameDetailsFx,
+} from "../../../bll/effector";
+import { useStore } from "effector-react";
 
 const GameDetailsContainer = () => {
-
-    const dispatch = useDispatch()
     const {slug} = useParams()
 
-    const gameDetails = useSelector(state => state.showcase.gameDetails)
-    const gameScreenshots = useSelector(state => state.showcase.screenshots)
-
-    useEffect(() => {
-        dispatch(getGameDetails(slug))
-    }, [slug, dispatch])
-
-
-    if (!gameDetails || (gameDetails.slug !== slug)) {
-        return <Preloader/>
-    }
+    const gameDetails = useStore($gameDetails);
+    const gameScreenshots = useStore($gameScreenshots);
+    const isLoading = useStore(getGameDetailsFx.pending);
 
     return (
-        <GameDetails gameDetails={gameDetails}
-                     gameScreenshots={gameScreenshots}
-        />
+        <>
+            <GameDetailsGate slug={slug} />
+            {isLoading && <Preloader/>}
+            {gameDetails && (
+                <GameDetails
+                    gameDetails={gameDetails}
+                    gameScreenshots={gameScreenshots}
+                />
+            )}
+        </>
+
     );
 };
 

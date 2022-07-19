@@ -3,7 +3,6 @@ import classes from "./GameDetails.module.scss"
 import {Slider} from "../../components/Carousel/Slider";
 
 const GameDetails = ({gameDetails, gameScreenshots}) => {
-    console.log(gameDetails.description_raw.split("###"))
     return (
         <section className={classes.gameDetails}>
             <h1 className={classes.title}>{gameDetails.name}</h1>

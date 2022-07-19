@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import classes from "./Search.module.scss"
 
 const Search = React.memo(({getSearchWord}) => {
-
     const [text, setText] = useState("");
 
     const onChangeHandler = (e) => {
